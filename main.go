@@ -19,6 +19,7 @@ func main() {
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
+		PORT = "8000"
 		log.Fatal("Error PORT is not defined in .env FILE")
 	}
 
