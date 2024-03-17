@@ -8,9 +8,13 @@ import (
 	"githib.com/Waris-Shaik/go-crud/controllers"
 	"githib.com/Waris-Shaik/go-crud/initializers"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func init() {
+	if err := godotenv.Load(); err != nil {
+		log.Fatalf("Error loading .env file: %v", err)
+	}
 	initializers.LoadEnvVariables()
 	initializers.ConnectToDB()
 }
